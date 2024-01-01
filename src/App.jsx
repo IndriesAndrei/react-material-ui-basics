@@ -1,6 +1,17 @@
 import { Add, Settings } from '@mui/icons-material';
 import './App.css';
-import { Button, Typography, styled } from '@mui/material';
+import {
+  Button,
+  Container,
+  Grid,
+  Toolbar,
+  Typography,
+  styled,
+} from '@mui/material';
+import Sidebar from './components/Sidebar';
+import Feed from './components/Feed';
+import Rightbar from './components/Rightbar';
+import Navbar from './components/Navbar';
 
 function App() {
   const BlueButton = styled(Button)({
@@ -10,7 +21,7 @@ function App() {
 
   return (
     <>
-      <Button startIcon={<Add />} variant='text'>
+      {/* <Button startIcon={<Add />} variant='text'>
         Text
       </Button>
       <Button startIcon={<Settings />} variant='contained' color='secondary'>
@@ -26,7 +37,21 @@ function App() {
       </Button>
 
       <hr />
-      <BlueButton>My Custom Blue Button</BlueButton>
+      <BlueButton>My Custom Blue Button</BlueButton> */}
+      <Navbar />
+      <Grid
+        container
+        bgcolor='black'
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </Grid>
     </>
   );
 }
